@@ -1,6 +1,16 @@
-# oruphones
+# ORUphones Flutter App
 
-A new Flutter project.
+A Flutter application for buying and selling used phones, built with a clean architecture and robust state management.
+
+## Architecture & State Management
+
+### State Management
+- **Stacked Architecture**: Implements MVVM pattern using the `stacked` package
+- View Models handle business logic and state
+- Services handle data operations and external interactions
+- Dependency injection using `get_it` for service locator pattern
+
+### Project Structure
 
 ## Getting Started
 
