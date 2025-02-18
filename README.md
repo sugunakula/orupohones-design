@@ -1,32 +1,38 @@
-# ORUphones Flutter App
 
-A Flutter application for buying and selling used phones, built with a clean architecture and robust state management.
+# **ORUphones - Flutter App**  
+A Flutter application for **buying and selling used phones**, built with **clean architecture** and **robust state management**.
 
-## Architecture & State Management
+---
 
-### State Management
-- **Stacked Architecture**: Implements MVVM pattern using the `stacked` package
-- View Models handle business logic and state
-- Services handle data operations and external interactions
-- Dependency injection using `get_it` for service locator pattern
+## **🛠 Architecture & State Management**  
+### **State Management**
+- **Stacked Architecture**: Implements the **MVVM** pattern using the `stacked` package.  
+- **ViewModels**: Handle business logic and state.  
+- **Services**: Manage data operations and external interactions.  
+- **Dependency Injection**: Uses `get_it` for service locator pattern.  
+
+---
+
+## **📂 Project Structure**  
+```
 lib/
 ├── core/                          # Core functionalities
-│   ├── config/                    # App configurations (API keys, themes)
+│   ├── config/                    # App configurations
 │   │   ├── app_config.dart
 │   │   ├── theme.dart
 │   │   └── constants.dart
 │   ├── dependencies/              # Dependency injection setup
 │   │   └── locator.dart
-│   ├── utils/                      # Helper functions
+│   ├── utils/                     # Helper functions
 │   │   ├── validators.dart
 │   │   ├── date_formatter.dart
 │   │   └── logger.dart
-│   ├── services/                   # Business logic & external services
+│   ├── services/                  # Business logic & external services
 │   │   ├── auth_service.dart
 │   │   ├── product_service.dart
 │   │   ├── notification_service.dart
-│   │   ├── api_service.dart        # API handling
-│   │   └── local_storage_service.dart # SharedPreferences or Hive
+│   │   ├── api_service.dart        # Handles API requests
+│   │   └── local_storage_service.dart # SharedPreferences/Hive storage
 │   ├── models/                     # Data models
 │   │   ├── user.dart
 │   │   ├── product.dart
@@ -83,80 +89,95 @@ lib/
 │       ├── colors.dart
 │       ├── typography.dart
 └── main.dart                       # App entry point
+```
 
+---
 
-### Key Features
-- Clean Architecture principles
-- MVVM pattern with Stacked
-- Dependency Injection
-- Firebase Cloud Messaging for notifications
-- REST API integration using Dio
-- Secure local storage with SharedPreferences
-- Custom widgets and animations
+## **🚀 Key Features**
+✅ **Clean Architecture** principles  
+✅ **MVVM pattern with Stacked** for structured state management  
+✅ **Dependency Injection** using `get_it`  
+✅ **Firebase Cloud Messaging** for push notifications  
+✅ **REST API integration** using Dio  
+✅ **Secure local storage** with SharedPreferences  
+✅ **Custom UI components & animations**  
 
-## Setup Instructions
+---
 
-### Prerequisites
-- Flutter SDK (3.5.4 or higher)
-- Android Studio / VS Code
-- Git
+## **🔧 Setup Instructions**
 
-### Getting Started
-1. Clone the repository
+### **Prerequisites**
+- **Flutter SDK (3.5.4 or higher)**
+- **Android Studio / VS Code**
+- **Git**
 
+### **Getting Started**
+#### **1. Clone the Repository**
+```sh
 git clone https://github.com/yourusername/oruphones.git
 cd oruphones
+```
 
-2. Install dependencies
-3. 
-3. Set up Firebase
-- Create a new Firebase project
-- Add your Android app to Firebase
-- Download `google-services.json` and place it in `android/app/`
-- Update `firebase_options.dart` with your Firebase configuration
+#### **2. Install Dependencies**
+```sh
+flutter pub get
+```
 
-4. Run the app
-   
-### Environment Setup
-Make sure to set up the following:
-- Android SDK
-- Flutter SDK
-- Firebase configuration
-- API endpoints configuration in `product_service.dart`
+#### **3. Set Up Firebase**
+- Create a new **Firebase project**  
+- Add your **Android app** to Firebase  
+- Download `google-services.json` and place it in `android/app/`  
+- Update `firebase_options.dart` with your Firebase configuration  
 
-## Features
-- User Authentication
-- Product Listing
-- Product Search & Filters
-- Push Notifications
-- Real-time Updates
-- Responsive UI
+#### **4. Run the App**
+```sh
+flutter run
+```
 
-## Dependencies
-yaml
+---
+
+## **🌍 Environment Setup**
+Ensure the following configurations:  
+✔ **Android SDK & Flutter SDK**  
+✔ **Firebase configuration setup**  
+✔ **API endpoints configured** in `product_service.dart`  
+
+---
+
+## **📌 Features**
+- **User Authentication** (Login, Register)  
+- **Product Listing & Management**  
+- **Advanced Search & Filters**  
+- **Push Notifications**  
+- **Real-time Updates**  
+- **Responsive UI** for all devices  
+
+---
+
+## **📦 Dependencies**
+```yaml
 dependencies:
-flutter_svg: ^2.0.10
-stacked: ^3.4.0
-stacked_services: ^1.1.0
-shared_preferences: ^2.2.2
-dio: ^5.4.0
-get_it: ^7.6.7
-lottie: ^3.0.0
-firebase_core: ^2.25.4
-firebase_messaging: ^14.7.15
+  flutter_svg: ^2.0.10
+  stacked: ^3.4.0
+  stacked_services: ^1.1.0
+  shared_preferences: ^2.2.2
+  dio: ^5.4.0
+  get_it: ^7.6.7
+  lottie: ^3.0.0
+  firebase_core: ^2.25.4
+  firebase_messaging: ^14.7.15
+```
 
+---
 
-## Contributing
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## **🤝 Contributing**
+1. **Fork** the repository  
+2. **Create a feature branch** (`git checkout -b feature/NewFeature`)  
+3. **Commit your changes** (`git commit -m 'Add NewFeature'`)  
+4. **Push to the branch** (`git push origin feature/NewFeature`)  
+5. **Open a Pull Request**  
 
-## License
-This project is licensed under the MIT License - see the LICENSE file for details
+---
 
-## Acknowledgments
-- Flutter team for the amazing framework
-- Firebase for backend services
-- All contributors who participate in this project
+## **📜 License**
+This project is licensed under the **MIT License** - see the `LICENSE` file for details.
