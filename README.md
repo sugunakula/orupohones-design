@@ -9,26 +9,81 @@ A Flutter application for buying and selling used phones, built with a clean arc
 - View Models handle business logic and state
 - Services handle data operations and external interactions
 - Dependency injection using `get_it` for service locator pattern
-
-### Project Structure
 lib/
-├── app/
-│ └── locator.dart # Dependency injection setup
-├── models/
-│ └── product.dart # Data models
-├── screens/
-│ ├── home_screen.dart # UI screens
-│ ├── login_screen.dart
-│ └── ...
-├── services/
-│ ├── auth_service.dart # Business logic services
-│ ├── product_service.dart
-│ └── notification_service.dart
-├── viewmodels/
-│ └── auth_viewmodel.dart # View models for state management
-└── widgets/
-├── custom_app_bar.dart # Reusable widgets
-└── ...
+├── core/                          # Core functionalities
+│   ├── config/                    # App configurations (API keys, themes)
+│   │   ├── app_config.dart
+│   │   ├── theme.dart
+│   │   └── constants.dart
+│   ├── dependencies/              # Dependency injection setup
+│   │   └── locator.dart
+│   ├── utils/                      # Helper functions
+│   │   ├── validators.dart
+│   │   ├── date_formatter.dart
+│   │   └── logger.dart
+│   ├── services/                   # Business logic & external services
+│   │   ├── auth_service.dart
+│   │   ├── product_service.dart
+│   │   ├── notification_service.dart
+│   │   ├── api_service.dart        # API handling
+│   │   └── local_storage_service.dart # SharedPreferences or Hive
+│   ├── models/                     # Data models
+│   │   ├── user.dart
+│   │   ├── product.dart
+│   │   ├── notification.dart
+│   │   └── order.dart
+│   ├── repositories/               # Repository layer (abstraction for services)
+│   │   ├── auth_repository.dart
+│   │   ├── product_repository.dart
+│   │   ├── notification_repository.dart
+│   │   └── order_repository.dart
+├── features/                       # Features of the app
+│   ├── auth/                       # Authentication module
+│   │   ├── screens/
+│   │   │   ├── login_screen.dart
+│   │   │   ├── register_screen.dart
+│   │   │   ├── forgot_password_screen.dart
+│   │   ├── viewmodels/
+│   │   │   ├── auth_viewmodel.dart
+│   │   └── widgets/
+│   │       ├── login_form.dart
+│   │       ├── register_form.dart
+│   ├── home/                       # Home module
+│   │   ├── screens/
+│   │   │   ├── home_screen.dart
+│   │   │   ├── product_detail_screen.dart
+│   │   │   ├── category_screen.dart
+│   │   ├── viewmodels/
+│   │   │   ├── home_viewmodel.dart
+│   │   │   ├── product_viewmodel.dart
+│   │   └── widgets/
+│   │       ├── product_card.dart
+│   │       ├── category_list.dart
+│   ├── notifications/               # Notifications module
+│   │   ├── screens/
+│   │   │   ├── notification_screen.dart
+│   │   ├── viewmodels/
+│   │   │   ├── notification_viewmodel.dart
+│   │   ├── widgets/
+│   │       ├── notification_tile.dart
+│   └── orders/                      # Orders module
+│       ├── screens/
+│       │   ├── orders_screen.dart
+│       │   ├── order_detail_screen.dart
+│       ├── viewmodels/
+│       │   ├── order_viewmodel.dart
+│       ├── widgets/
+│           ├── order_card.dart
+├── shared/                         # Shared UI components
+│   ├── widgets/
+│   │   ├── custom_app_bar.dart
+│   │   ├── custom_button.dart
+│   │   ├── loading_indicator.dart
+│   └── styles/
+│       ├── colors.dart
+│       ├── typography.dart
+└── main.dart                       # App entry point
+
 
 ### Key Features
 - Clean Architecture principles
